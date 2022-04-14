@@ -5,3 +5,9 @@ api-version: 1.18
 authors: [ Murmelmeister ]
 description: A system to edit items.
 website: https://www.youtube.com/Murmelmeister
+
+commands:
+  itemedit:
+    usage: /<command>
+    description: Edit the items.
+    aliases: [ ie ]

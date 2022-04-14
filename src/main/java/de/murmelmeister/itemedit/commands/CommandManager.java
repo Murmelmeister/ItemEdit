@@ -10,10 +10,11 @@ public class CommandManager {
     private final ItemEdit instance = ItemEdit.getInstance();
 
     public void registerCommands() {
-
+        setCommand("itemedit", new CommandItemEdit());
     }
 
-    private void setCommand(String commandName, TabExecutor command) {
+    private
+    void setCommand(String commandName, TabExecutor command) {
         Objects.requireNonNull(this.instance.getCommand(commandName)).setExecutor(command);
         Objects.requireNonNull(this.instance.getCommand(commandName)).setTabCompleter(command);
     }
