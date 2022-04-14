@@ -1,0 +1,7 @@
+name: ItemEdit
+version: '${project.version}'
+main: de.murmelmeister.itemedit.ItemEdit
+api-version: 1.18
+authors: [ Murmelmeister ]
+description: A system to edit items.
+website: https://www.youtube.com/Murmelmeister
