@@ -1,17 +1,36 @@
 package de.murmelmeister.itemedit;
 
-import org.bukkit.plugin.java.JavaPlugin;
+public final class ItemEdit extends Main {
 
-public final class ItemEdit extends JavaPlugin {
-
-    @Override
-    public void onEnable() {
-        // Plugin startup logic
-
-    }
+    private static ItemEdit instance;
 
     @Override
     public void onDisable() {
-        // Plugin shutdown logic
+        handleDisableMessage();
     }
+
+    @Override
+    public void onEnable() {
+        init();
+        handleEnableMessage();
+    }
+
+    @Override
+    public void onLoad() {
+        setInstance(this);
+    }
+
+    @Override
+    public void init() {
+
+    }
+
+    public static ItemEdit getInstance() {
+        return instance;
+    }
+
+    public static void setInstance(ItemEdit instance) {
+        ItemEdit.instance = instance;
+    }
+
 }
