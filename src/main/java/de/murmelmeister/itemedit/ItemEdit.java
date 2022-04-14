@@ -1,8 +1,12 @@
 package de.murmelmeister.itemedit;
 
+import de.murmelmeister.itemedit.commands.CommandManager;
+
 public final class ItemEdit extends Main {
 
     private static ItemEdit instance;
+
+    private CommandManager commandManager;
 
     @Override
     public void onDisable() {
@@ -22,7 +26,8 @@ public final class ItemEdit extends Main {
 
     @Override
     public void init() {
-
+        setCommandManager(new CommandManager());
+        commandManager.registerCommands();
     }
 
     public static ItemEdit getInstance() {
@@ -33,4 +38,7 @@ public final class ItemEdit extends Main {
         ItemEdit.instance = instance;
     }
 
+    public void setCommandManager(CommandManager commandManager) {
+        this.commandManager = commandManager;
+    }
 }
