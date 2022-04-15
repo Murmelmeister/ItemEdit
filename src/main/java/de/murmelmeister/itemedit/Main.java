@@ -1,7 +1,5 @@
 package de.murmelmeister.itemedit;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public abstract class Main extends JavaPlugin {
@@ -9,7 +7,8 @@ public abstract class Main extends JavaPlugin {
     private String version = "a1.0.0";
     private String author = "Murmelmeister";
     private String pluginName = "ItemEdit";
-    private Component prefix = Component.text("ItemEdit", TextColor.color(0x00Aff0));
+    private String prefix;
+
 
     public abstract void onDisable();
 
@@ -55,11 +54,12 @@ public abstract class Main extends JavaPlugin {
         this.pluginName = pluginName;
     }
 
-    public Component getPrefix() {
+    public String getPrefix() {
         return prefix;
     }
 
-    public void setPrefix(Component prefix) {
+    public void setPrefix(String prefix) {
         this.prefix = prefix;
     }
+
 }

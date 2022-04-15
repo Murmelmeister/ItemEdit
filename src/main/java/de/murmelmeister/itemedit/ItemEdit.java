@@ -1,12 +1,15 @@
 package de.murmelmeister.itemedit;
 
 import de.murmelmeister.itemedit.commands.CommandManager;
+import de.murmelmeister.itemedit.config.ConfigMessage;
 
 public final class ItemEdit extends Main {
 
     private static ItemEdit instance;
 
     private CommandManager commandManager;
+
+    private ConfigMessage configMessage;
 
     @Override
     public void onDisable() {
@@ -27,6 +30,8 @@ public final class ItemEdit extends Main {
     @Override
     public void init() {
         setCommandManager(new CommandManager());
+        setConfigMessage(new ConfigMessage());
+        setPrefix(configMessage.getConfig().getString("Prefix"));
         commandManager.registerCommands();
     }
 
@@ -41,4 +46,13 @@ public final class ItemEdit extends Main {
     public void setCommandManager(CommandManager commandManager) {
         this.commandManager = commandManager;
     }
+
+    public ConfigMessage getConfigMessage() {
+        return configMessage;
+    }
+
+    public void setConfigMessage(ConfigMessage configMessage) {
+        this.configMessage = configMessage;
+    }
+
 }
