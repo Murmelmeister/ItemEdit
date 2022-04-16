@@ -49,14 +49,28 @@ public class ConfigMessage {
 
     public void createLoadFile() {
         this.getConfig().set("Prefix", HexColor.format("#00Aff0ItemEdit #444444» §r"));
+        this.getConfig().set("NoPermissions", HexColor.format("#ff0000You don't have the permission to do that."));
+        this.getConfig().set("Permissions.ItemEdit.Command", "itemedit.command.itemedit");
+        this.getConfig().set("Permissions.ItemEdit.Author", "itemedit.command.itemedit.author");
+        this.getConfig().set("Permissions.ItemEdit.Reload", "itemedit.command.itemedit.reload");
+        this.getConfig().set("ItemEdit.Message.Reload", HexColor.format("#00ff00The configuration has been reloaded."));
     }
 
     public void loadFile() {
         this.getConfig().getString("Prefix");
+        this.getConfig().getString("NoPermissions");
+        this.getConfig().getString("Permissions.ItemEdit.Command");
+        this.getConfig().getString("Permissions.ItemEdit.Author");
+        this.getConfig().getString("Permissions.ItemEdit.Reload");
+        this.getConfig().getString("ItemEdit.Message.Reload");
     }
 
     public File getFolder() {
         return folder;
+    }
+
+    public File getFile() {
+        return file;
     }
 
     public YamlConfiguration getConfig() {
