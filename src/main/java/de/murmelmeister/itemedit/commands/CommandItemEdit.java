@@ -24,7 +24,7 @@ public class CommandItemEdit extends Commands {
 
         } else if (args.length == 1) {
 
-            if (args[0].equalsIgnoreCase("reload")) {
+            if (args[0].equalsIgnoreCase("reload")) { // test
 
                 if (!(sender.hasPermission(Objects.requireNonNull(this.configMessage.getConfig().getString("Permissions.ItemEdit.Reload"))))) {
                     setSendMessage(sender, this.configMessage.getConfig().getString("NoPermissions"));
