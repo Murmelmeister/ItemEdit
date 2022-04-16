@@ -35,7 +35,7 @@ public class CommandItemEdit extends Commands {
                 setSendMessage(sender, this.configMessage.getConfig().getString("ItemEdit.Message.Reload"));
 
             } else {
-                setSyntaxErrorMessage(sender);
+                setSyntaxErrorMessage(sender); // test
             }
 
 
